@@ -247,7 +247,7 @@ export const projectsData = [
     category: "qa-ai",
     categoryLabel: "Financial Systems & ML",
     badge: "Predictive Analytics",
-    liveUrl: "#finance-demo",
+    liveUrl: "https://financial-dash.streamlit.app",
     githubUrl: "https://github.com/yellaling2204/financial-dash",
     interactiveDemoId: "finance",
     techStack: ["Python", "Streamlit", "Yahoo Finance API", "Pandas", "Plotly", "NumPy"],
@@ -261,8 +261,8 @@ export const projectsData = [
     ],
     architecture: "Financial REST API → Pandas Data Sanitizer → Quantitative Feature Pipeline → Plotly Visualizer → Interactive Web UI",
     stats: {
-      metric1: "Live Telemetry",
-      metric1Label: "Market Data",
+      metric1: "Live Cloud",
+      metric1Label: "Streamlit App",
       metric2: "ML Engine",
       metric2Label: "Time-Series",
       metric3: "Multi-Asset",
@@ -272,15 +272,15 @@ export const projectsData = [
   {
     id: "doctors-patient-record-book",
     title: "Doctor & Patient Clinical Record Portal",
-    subtitle: "Next.js 14, TypeScript, MongoDB, JWT & Medical EHR",
+    subtitle: "Next.js 15, TypeScript, MongoDB, JWT & Medical EHR",
     category: "fullstack",
     categoryLabel: "Healthcare Full-Stack Web",
     badge: "Clinical Healthcare Portal",
-    liveUrl: "#ehr-demo",
+    liveUrl: "https://doctors-patient-record-book.vercel.app",
     githubUrl: "https://github.com/yellaling2204/Frontend-Developer-Intern",
     secondaryGithubUrl: "https://github.com/yellaling2204/flask-mysql-app",
     interactiveDemoId: "ehr",
-    techStack: ["Next.js 14", "TypeScript", "Tailwind CSS", "MongoDB", "JWT Auth", "REST APIs"],
+    techStack: ["Next.js 15", "TypeScript", "Tailwind CSS", "MongoDB", "JWT Auth", "REST APIs"],
     description:
       "A full-stack healthcare web application for medical professionals to manage electronic patient health records (EHR), track clinical diagnostics, log vital signs, and schedule patient appointments with granular access security.",
     keyPoints: [
@@ -291,12 +291,41 @@ export const projectsData = [
     ],
     architecture: "Next.js Client → Healthcare API Gateway → Mongoose Medical Models → Encrypted Patient Database",
     stats: {
-      metric1: "EHR Medical",
-      metric1Label: "Clinical Standard",
+      metric1: "Live Vercel",
+      metric1Label: "Production App",
       metric2: "Strict RBAC",
       metric2Label: "HIPAA-Style Privacy",
-      metric3: "Next.js 14",
+      metric3: "Next.js 15",
       metric3Label: "App Router"
+    }
+  },
+  {
+    id: "frontend-developer-intern",
+    title: "Camonk Frontend Assessment & Blog Platform",
+    subtitle: "React, TypeScript, TanStack Query, Tailwind & UI Components",
+    category: "fullstack",
+    categoryLabel: "Frontend Architecture & UX",
+    badge: "Interactive Assessment",
+    liveUrl: "https://frontend-developer-intern.vercel.app",
+    githubUrl: "https://github.com/yellaling2204/Frontend-Developer-Intern",
+    interactiveDemoId: "docs",
+    techStack: ["React.js", "TypeScript", "TanStack Query", "Tailwind CSS", "Vite", "Vercel"],
+    description:
+      "A modern, responsive blog and content management platform engineered with React, TypeScript, TanStack Query, and Tailwind CSS. Features dynamic article reading, optimistic updates, responsive filtering, and seamless Vercel edge deployment.",
+    keyPoints: [
+      "Engineered asynchronous server-state cache synchronization using TanStack Query with optimistic UI updates.",
+      "Constructed accessible, fluid UI components with Tailwind CSS and responsive layout grids.",
+      "Enforced strict TypeScript domain models for articles, authors, and metadata.",
+      "Deployed production-ready bundle to Vercel with zero runtime latency."
+    ],
+    architecture: "React + Vite Client → TanStack Query Cache → RESTful Data Layer → Vercel Edge CDN",
+    stats: {
+      metric1: "Live Vercel",
+      metric1Label: "Production App",
+      metric2: "TanStack",
+      metric2Label: "Query State",
+      metric3: "Zero Errors",
+      metric3Label: "Strict Types"
     }
   },
   {
