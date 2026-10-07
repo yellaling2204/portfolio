@@ -30,17 +30,38 @@ export default function Contact() {
     setTimeout(() => setCopiedType(null), 2500);
   };
 
+  const handleCopyRecruiterPitch = () => {
+    const pitch = `Candidate: ${personalDetails.fullName}
+Degree: B.Tech in CSE (2022-2026), IIIT Dharwad
+Roles: Full-Stack Software Engineer (MERN & Next.js 14) | Quality Engineering & Automation Specialist
+Availability: ${personalDetails.availability} (${personalDetails.relocation})
+Email: ${personalDetails.email}
+Phone: ${personalDetails.phone}
+Portfolio: https://yellaling-portfolio.vercel.app
+GitHub: ${personalDetails.github}
+LinkedIn: ${personalDetails.linkedin}`;
+    navigator.clipboard.writeText(pitch);
+    setCopiedType('pitch');
+    setTimeout(() => setCopiedType(null), 3000);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate dispatch
+    const mailtoUrl = `mailto:${personalDetails.email}?subject=${encodeURIComponent(
+      formData.subject || `Inquiry from ${formData.name} via Portfolio`
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
+      window.location.href = mailtoUrl;
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 800);
+      setTimeout(() => setSubmitted(false), 6000);
+    }, 600);
   };
 
   return (
@@ -78,10 +99,29 @@ export default function Contact() {
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Targeting Quality Engineering, Automation Testing, and Software Development positions. Open to relocate anywhere across India and abroad.
               </p>
-              <div className="flex items-center space-x-2 text-[11px] font-mono text-cyan-300">
+              <div className="flex items-center space-x-2 text-[11px] font-mono text-cyan-300 mb-4">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Target: Deloitte & Leading Tech Firms</span>
               </div>
+
+              {/* 1-Click Fast-Track Recruiter Copy */}
+              <button
+                type="button"
+                onClick={handleCopyRecruiterPitch}
+                className="w-full py-2.5 px-3 rounded-xl bg-slate-950/80 border border-emerald-500/40 hover:border-emerald-400 text-emerald-300 hover:text-emerald-200 text-xs font-mono font-medium flex items-center justify-center space-x-2 transition-all duration-200 shadow-sm shadow-emerald-950/50"
+              >
+                {copiedType === 'pitch' ? (
+                  <>
+                    <Check className="w-4 h-4 text-emerald-400" />
+                    <span className="text-emerald-400 font-semibold">Recruiter Summary Copied to Clipboard!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy Recruiter Fast-Track Summary</span>
+                  </>
+                )}
+              </button>
             </div>
 
             {/* Email Card with Copy */}

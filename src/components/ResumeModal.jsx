@@ -42,6 +42,16 @@ export default function ResumeModal({ isOpen, onClose }) {
           </div>
 
           <div className="flex items-center space-x-2">
+            <a
+              href="/Yellaling_Kalyane_Resume.pdf"
+              download="Yellaling_Kalyane_Resume.pdf"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 font-bold font-mono text-xs hover:opacity-95 transition-opacity shadow-glow-cyan"
+              title="Download Original PDF Resume"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Download PDF</span>
+            </a>
+
             <button
               onClick={handlePrint}
               className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-900/60 font-mono text-xs transition-colors"
